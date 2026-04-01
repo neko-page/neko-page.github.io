@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简在线工具箱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>在线工具箱</h1>
+        <p class="subtitle">简单、快速、免费。本站工具全部开源。</p>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="搜索工具...">
+        </div>
+
+        <div class="categories" id="categoryContainer">
+            <!-- 分类标签由 JS 动态生成 -->
+        </div>
+    </header>
+
+    <main class="tools-grid" id="toolsGrid">
+        <!-- 工具卡片由 JS 动态生成 -->
+    </main>
+    
+    <footer>
+        <p>&copy; 小猫工作室-工具箱</p>
+    </footer>
+</div>
+
+<script src="tools-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

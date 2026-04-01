@@ -1,0 +1,34 @@
+const TOOLS_CONFIG = [
+    {
+        categoryId: "mc",
+        categoryName: "我的世界",
+        tools: [
+            {
+                name: "指令库",
+                description: "查找mc基岩版指令",
+                link: "/app/commands"
+            },
+            {
+                name: "T显生成器",
+                description: "生成titleraw.json",
+                link: "/app/mc-titleraw"
+            },
+            {
+                name: "T显生成器2.0",
+                description: "基于1.0进行改进",
+                link: "/app/mc-titleraw/2.0"
+            }
+        ]
+    },
+    {
+        categoryId: "other",
+        categoryName: "其他",
+        tools: [
+            {
+                name: "公共文本",
+                description: "通过?text=设置文本",
+                link: "/page/public-text?text=在这修改"
+            }
+        ]
+    }
+];
