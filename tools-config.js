@@ -11,12 +11,12 @@ const TOOLS_CONFIG = [
             {
                 name: "T显生成器",
                 description: "生成titleraw.json",
-                link: "/app/mc-titleraw"
+                link: "/app/mc-rawtext"
             },
             {
                 name: "T显生成器2.0",
                 description: "基于1.0进行改进",
-                link: "/app/mc-titleraw/2.0"
+                link: "/app/mc-rawtext/2.0"
             }
         ]
     },
