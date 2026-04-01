@@ -27,7 +27,7 @@ const TOOLS_CONFIG = [
             {
                 name: "父母性别检测器",
                 description: "使用超级AI算法",
-                link: "/app/"
+                link: "/app/parents-gender-detector.html"
             }
         ]
     },
