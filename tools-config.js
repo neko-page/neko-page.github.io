@@ -21,6 +21,17 @@ const TOOLS_CONFIG = [
         ]
     },
     {
+        categoryId: "joke",
+        categoryName: "娱乐",
+        tools: [
+            {
+                name: "父母性别检测器",
+                description: "使用超级AI算法",
+                link: "/app/"
+            }
+        ]
+    },
+    {
         categoryId: "other",
         categoryName: "其他",
         tools: [
