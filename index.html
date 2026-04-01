@@ -12,13 +12,84 @@
     </script>
     <title>极简在线工具箱</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content h2 {
+            margin: 0 0 16px 0;
+            font-size: 1.5rem;
+            color: #1f2937;
+        }
+
+        .modal-text {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .modal-btn {
+            background: #3b82f6;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .modal-btn:hover {
+            background: #2563eb;
+        }
+    </style>
 </head>
 <body>
+
+<!-- 隐私提示弹窗 -->
+<div id="privacyModal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>隐私提示</h2>
+        <p class="modal-text">我们将会在您访问与使用本站工具时使用 JavaScript 脚本对您的行为进行监听，继续使用即视为同意。</p>
+        <button id="agreeBtn" class="modal-btn">确定</button>
+    </div>
+</div>
 
 <div class="container">
     <header>
         <h1>在线工具箱</h1>
-        <p class="subtitle">简单、快速、免费。本站工具全部开源。</p>
+        <p class="subtitle">简单、快速、免费。选择你需要的工具开始工作。</p>
         
         <div class="search-box">
             <input type="text" id="searchInput" class="search-input" placeholder="搜索工具...">
@@ -34,9 +105,30 @@
     </main>
     
     <footer>
-        <p>&copy; 小猫工作室-工具箱</p>
+        <p>&copy; 2024 极简工具箱</p>
     </footer>
 </div>
+
+<!-- 弹窗逻辑 -->
+<script>
+    // 检查是否已同意过
+    const hasAgreed = localStorage.getItem('privacyAgreed');
+    
+    if (!hasAgreed) {
+        // 显示弹窗
+        setTimeout(() => {
+            document.getElementById('privacyModal').classList.add('show');
+        }, 300);
+    }
+
+    // 确定按钮点击事件
+    document.getElementById('agreeBtn').addEventListener('click', () => {
+        // 存储同意状态
+        localStorage.setItem('privacyAgreed', 'true');
+        // 隐藏弹窗
+        document.getElementById('privacyModal').classList.remove('show');
+    });
+</script>
 
 <script src="tools-config.js"></script>
 <script src="script.js"></script>
