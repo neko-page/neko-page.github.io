@@ -7,14 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. 渲染分类标签
     function renderCategories() {
-        // 全部按钮
         const allButton = document.createElement('button');
         allButton.className = 'cat-tag active';
         allButton.textContent = '全部';
         allButton.setAttribute('data-category', 'all');
         categoryContainer.appendChild(allButton);
 
-        // 分类按钮
         TOOLS_CONFIG.forEach(category => {
             const button = document.createElement('button');
             button.className = 'cat-tag';
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryContainer.appendChild(button);
         });
 
-        // 绑定点击事件
         document.querySelectorAll('.cat-tag').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.cat-tag').forEach(b => b.classList.remove('active'));
@@ -40,13 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchText = searchInput.value.toLowerCase().trim();
 
         TOOLS_CONFIG.forEach(category => {
-            // 分类筛选
             if (currentCategory !== 'all' && currentCategory !== category.categoryId) {
                 return;
             }
 
             category.tools.forEach(tool => {
-                // 搜索筛选
                 if (searchText && 
                     !tool.name.toLowerCase().includes(searchText) && 
                     !tool.description.toLowerCase().includes(searchText)) {
@@ -56,6 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('a');
                 card.className = 'tool-card';
                 card.href = tool.link;
+                card.target = '_blank';           // ⭐ 新窗口打开
+                card.rel = 'noopener noreferrer'; // ⭐ 安全最佳实践
 
                 card.innerHTML = `
                     <div class="tool-info">
@@ -68,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // 空状态提示
         if (toolsGrid.children.length === 0) {
             toolsGrid.innerHTML = `
                 <div style="grid-column: 1/-1; text-align: center; padding: 60px; color: var(--text-sub);">
@@ -79,10 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. 搜索监听
     searchInput.addEventListener('input', renderTools);
 
-    // 4. 初始化
     renderCategories();
     renderTools();
 });
