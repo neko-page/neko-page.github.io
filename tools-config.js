@@ -1,5 +1,16 @@
 const TOOLS_CONFIG = [
     {
+        categoryId: "H5",
+        categoryName: "html工具箱",
+        tools: [
+            {
+                name: "div生成器",
+                description: "快速生成style",
+                link: "/app/div-craft"
+            }
+        ]
+    },
+    {
         categoryId: "mc",
         categoryName: "我的世界",
         tools: [
