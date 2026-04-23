@@ -1,5 +1,16 @@
 const TOOLS_CONFIG = [
     {
+        categoryId: "web",
+        categoryName: "web通用工具",
+        tools: [
+            {
+                name: "json编辑器",
+                description: "快速编辑json，创新式使用文件管理器界面",
+                link: "/app/JsonParser"
+            }
+        ]
+    },
+    {
         categoryId: "H5",
         categoryName: "html工具箱",
         tools: [
