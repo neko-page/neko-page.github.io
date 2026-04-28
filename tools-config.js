@@ -18,6 +18,11 @@ const TOOLS_CONFIG = [
                 name: "div生成器",
                 description: "快速生成style",
                 link: "/app/div-craft"
+            },
+            {
+                name: " html 打包 apk",
+                description: "无法编辑名称，包名，无法签名（纯前端）",
+                link: "/app/h5-app"
             }
         ]
     },
